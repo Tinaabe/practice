@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I Love You Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #ffdde1;
+            font-family: Arial, sans-serif;
+        }
+        #message {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff3366;
+        }
+    </style>
+</head>
+<body>
+    <div id="message"></div>
+    <script>
+        const message = "i love you";
+        let index = 0;
+        function animateText() {
+            if (index <= message.length) {
+                document.getElementById("message").textContent = message.slice(0, index);
+                index++;
+                setTimeout(animateText, 500);
+            }
+        }
+        animateText();
+    </script>
+</body>
+</html>
